@@ -11,9 +11,9 @@
 	<form method="POST" action="">
 		<p>Change Password:</p>
         {{ form.hidden_tag() }}
-        <p>{{ form.oldpass }}</p>
-		<p>{{ form.newpass }}</p>
-		<p>{{ form.confirmpass }}</p>
-        <p>{{ form.submit }}</p>
+        {{ form.oldpass }}
+		{{ form.newpass }}
+		{{ form.confirmpass }}
+        {{ form.submit }}
     </form>
 {% endblock %}

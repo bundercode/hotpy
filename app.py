@@ -53,21 +53,21 @@ class RegisterForm(FlaskForm):
             raise ValidationError(
                 'That username already exists. Please choose a different one.')
 
-class ChangePwForm(FlaskForm):
-    oldpass = StringField(validators=[
-        InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Current password"})
-    newpass = PasswordField(validators=[
-        InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "New password"})
-    confirmpass = PasswordField(validators=[
-        InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Confirm password"})
-    submit = SubmitField('Change')
-
 class LoginForm(FlaskForm):
     username = StringField(validators=[
         InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
     password = PasswordField(validators=[
         InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
     submit = SubmitField('Login')
+
+class ChangePwForm(FlaskForm):
+    oldpass = PasswordField(validators=[
+        InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Current password"})
+    newpass = PasswordField(validators=[
+        InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "New password"})
+    confirmpass = PasswordField(validators=[
+        InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Confirm password"})
+    submit = SubmitField('Change')
 
 
 
