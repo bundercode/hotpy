@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Change password{% endblock %}
+{% block content %}
+	{% with messages = get_flashed_messages() %}
+		{% if messages %}
+			{% for msg in messages %}
+				<p>{{msg}}</p>
+			{% endfor %}
+		{% endif %}
+	{% endwith %}
+	<form method="POST" action="">
+		<p>Change Password:</p>
+        {{ form.hidden_tag() }}
+        {{ form.oldpass }}
+		{{ form.newpass }}
+		{{ form.confirmpass }}
+        {{ form.submit }}
+    </form>
+{% endblock %}
